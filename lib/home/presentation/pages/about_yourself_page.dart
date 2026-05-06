@@ -11,6 +11,7 @@ class AboutYourselfPage extends StatefulWidget {
 }
 
 class _AboutYourselfPageState extends State<AboutYourselfPage> {
+  int change = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,31 +45,55 @@ class _AboutYourselfPageState extends State<AboutYourselfPage> {
             Row(
               mainAxisAlignment: .spaceBetween,
               children: [
-                Container(
-                  height: 60,
-                  width: 220,
-                  decoration: BoxDecoration(
-                    color: MainColors.mainColors,
-                    borderRadius: .circular(100),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Men',
-                      style: TextStyle(color: Colors.white, fontSize: 17),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      change = 0;
+                    });
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 220,
+                    decoration: BoxDecoration(
+                      color: change == 0
+                          ? MainColors.mainColors
+                          : MainColors.mainColors2,
+                      borderRadius: .circular(100),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Men',
+                        style: TextStyle(
+                          color: change == 0 ? Colors.white : Colors.black,
+                          fontSize: 17,
+                        ),
+                      ),
                     ),
                   ),
                 ),
-                Container(
-                  height: 60,
-                  width: 220,
-                  decoration: BoxDecoration(
-                    color: MainColors.mainColors2,
-                    borderRadius: .circular(100),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Woman',
-                      style: TextStyle(color: Colors.black, fontSize: 17),
+                GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      change = 1;
+                    });
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 220,
+                    decoration: BoxDecoration(
+                      color: change == 1
+                          ? MainColors.mainColors
+                          : MainColors.mainColors2,
+                      borderRadius: .circular(100),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Woman',
+                        style: TextStyle(
+                          color: change == 1 ? Colors.white : Colors.black,
+                          fontSize: 17,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -80,6 +105,35 @@ class _AboutYourselfPageState extends State<AboutYourselfPage> {
               style: TextStyle(color: Bgcolor.backGroundColor, fontSize: 16),
             ),
             SizedBox(height: 15),
+            Container(
+              height: 60,
+              width: 460,
+              decoration: BoxDecoration(
+                color: MainColors.mainColors2,
+                borderRadius: .circular(100),
+              ),
+              child: Row(
+                children: [
+                  Padding(padding: .only(left: 20)),
+                  Text(
+                    'Age Range',
+                    style: TextStyle(
+                      color: Bgcolor.backGroundColor,
+                      fontSize: 16,
+                    ),
+                  ),
+                  SizedBox(width: 300),
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.keyboard_arrow_down,
+                      color: Colors.grey.shade700,
+                      size: 30,
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ],
         ),
       ),
