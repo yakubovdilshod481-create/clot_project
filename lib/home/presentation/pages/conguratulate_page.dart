@@ -1,4 +1,6 @@
 import 'package:clot_project/home/core/color/backgroundcolor.dart';
+import 'package:clot_project/home/core/color/main_colors.dart';
+import 'package:clot_project/home/presentation/pages/about_yourself_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -34,10 +36,33 @@ class _ConguratulatePageState extends State<ConguratulatePage> {
                   'We sent you an Email to reset\n           your password',
                   style: GoogleFonts.gabarito(
                     color: Bgcolor.backGroundColor,
-                    fontSize: 25,
+                    fontSize: 23,
                   ),
                 ),
               ],
+            ),
+            SizedBox(height: 15),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AboutYourselfPage()),
+                );
+              },
+              child: Container(
+                height: 50,
+                width: 150,
+                decoration: BoxDecoration(
+                  borderRadius: .circular(100),
+                  color: MainColors.mainColors,
+                ),
+                child: Center(
+                  child: Text(
+                    'Return to Login',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ),
             ),
           ],
         ),
