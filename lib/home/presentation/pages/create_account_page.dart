@@ -38,88 +38,90 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: .start,
-          children: [
-            Transform.scale(
-              scaleX: 1.10,
-              child: Row(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: .start,
+            children: [
+              Transform.scale(
+                scaleX: 1.10,
+                child: Row(
+                  children: [
+                    Padding(padding: .only(left: 20)),
+                    Text(
+                      'Create Account',
+                      style: TextStyle(
+                        color: Bgcolor.backGroundColor,
+                        fontSize: 30,
+                        fontWeight: .bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 30),
+              SizedBox(
+                height: 70,
+                width: 450,
+                child: AppTextfield.textfield(data: 'Firstname'),
+              ),
+              SizedBox(height: 15),
+              SizedBox(
+                height: 70,
+                width: 450,
+                child: AppTextfield.textfield(data: 'Lastname'),
+              ),
+              SizedBox(height: 15),
+              SizedBox(
+                height: 70,
+                width: 450,
+                child: AppTextfield.textfield(data: 'Email Address'),
+              ),
+              SizedBox(height: 15),
+              SizedBox(
+                height: 70,
+                width: 450,
+                child: AppTextfield.textfield(data: 'Password'),
+              ),
+              SizedBox(height: 35),
+              SizedBox(
+                height: 50,
+                width: 460,
+                child: InkWell(onTap: () {}, child: MainContainer.mainContainer),
+              ),
+              SizedBox(height: 45),
+              Row(
                 children: [
-                  Padding(padding: .only(left: 20)),
-                  Text(
-                    'Create Account',
-                    style: TextStyle(
-                      color: Bgcolor.backGroundColor,
-                      fontSize: 30,
-                      fontWeight: .bold,
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ForgotPasswordPage(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      'Forgot Password?',
+                      style: TextStyle(color: Bgcolor.backGroundColor),
+                    ),
+                  ),
+                  SizedBox(width: 5),
+                  InkWell(
+                    onTap: () {},
+                    child: Text(
+                      'Reset',
+                      style: TextStyle(
+                        color: Bgcolor.backGroundColor,
+                        fontWeight: .bold,
+                      ),
                     ),
                   ),
                 ],
               ),
-            ),
-            SizedBox(height: 30),
-            SizedBox(
-              height: 70,
-              width: 450,
-              child: AppTextfield.textfield(data: 'Firstname'),
-            ),
-            SizedBox(height: 15),
-            SizedBox(
-              height: 70,
-              width: 450,
-              child: AppTextfield.textfield(data: 'Lastname'),
-            ),
-            SizedBox(height: 15),
-            SizedBox(
-              height: 70,
-              width: 450,
-              child: AppTextfield.textfield(data: 'Email Address'),
-            ),
-            SizedBox(height: 15),
-            SizedBox(
-              height: 70,
-              width: 450,
-              child: AppTextfield.textfield(data: 'Password'),
-            ),
-            SizedBox(height: 35),
-            SizedBox(
-              height: 50,
-              width: 460,
-              child: InkWell(onTap: () {}, child: MainContainer.mainContainer),
-            ),
-            SizedBox(height: 45),
-            Row(
-              children: [
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ForgotPasswordPage(),
-                      ),
-                    );
-                  },
-                  child: Text(
-                    'Forgot Password?',
-                    style: TextStyle(color: Bgcolor.backGroundColor),
-                  ),
-                ),
-                SizedBox(width: 5),
-                InkWell(
-                  onTap: () {},
-                  child: Text(
-                    'Reset',
-                    style: TextStyle(
-                      color: Bgcolor.backGroundColor,
-                      fontWeight: .bold,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

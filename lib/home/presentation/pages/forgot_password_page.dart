@@ -38,42 +38,44 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: .start,
-          children: [
-            Text(
-              'Forgot Password',
-              style: TextStyle(
-                color: Bgcolor.backGroundColor,
-                fontSize: 30,
-                fontWeight: .bold,
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: .start,
+            children: [
+              Text(
+                'Forgot Password',
+                style: TextStyle(
+                  color: Bgcolor.backGroundColor,
+                  fontSize: 30,
+                  fontWeight: .bold,
+                ),
               ),
-            ),
-            SizedBox(height: 30),
-            SizedBox(
-              height: 60,
-              width: 460,
-              child: AppTextfield.textfield(data: 'Enter Email address'),
-            ),
-            SizedBox(height: 25),
-            SizedBox(
-              height: 50,
-              width: 460,
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ConguratulatePage(),
-                    ),
-                  );
-                },
-                child: MainContainer.mainContainer,
+              SizedBox(height: 30),
+              SizedBox(
+                height: 60,
+                width: 460,
+                child: AppTextfield.textfield(data: 'Enter Email address'),
               ),
-            ),
-          ],
+              SizedBox(height: 25),
+              SizedBox(
+                height: 50,
+                width: 460,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ConguratulatePage(),
+                      ),
+                    );
+                  },
+                  child: MainContainer.mainContainer,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -15,136 +15,138 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: .start,
-          children: [
-            Padding(padding: .only(top: 30)),
-            Transform.scale(
-              scaleX: 1.0,
-              child: Row(
-                children: [
-                  Text(
-                    'Sign in',
-                    style: TextStyle(
-                      color: Bgcolor.backGroundColor,
-                      fontSize: 30,
-                      fontWeight: .bold,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(height: 30),
-            TextField(
-              decoration: InputDecoration(
-                contentPadding: .symmetric(vertical: 20),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: .circular(4),
-                  borderSide: BorderSide(color: MainColors.mainColors2),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: .circular(4),
-                  borderSide: BorderSide(color: MainColors.mainColors2),
-                ),
-                hintText: 'Email Address',
-                hintStyle: TextStyle(color: Colors.grey.shade700, fontSize: 16),
-                filled: true,
-                fillColor: MainColors.mainColors2,
-                prefix: Padding(padding: .only(left: 8)),
-              ),
-            ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: .center,
-              children: [
-                SizedBox(
-                  height: 50,
-                  width: 460,
-                  child: InkWell(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SignInPasswordPage(),
-                        ),
-                      );
-                    },
-                    borderRadius: .circular(100),
-                    child: MainContainer.mainContainer,
-                  ),
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Transform.scale(
-              scaleX: 1.10,
-              child: Row(
-                children: [
-                  Padding(padding: .only(left: 23)),
-                  InkWell(
-                    onTap: () {},
-                    child: Text(
-                      'Don\'t have an Account?',
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: .start,
+            children: [
+              Padding(padding: .only(top: 30)),
+              Transform.scale(
+                scaleX: 1.0,
+                child: Row(
+                  children: [
+                    Text(
+                      'Sign in',
                       style: TextStyle(
                         color: Bgcolor.backGroundColor,
-                        fontSize: 13,
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 2),
-                  InkWell(
-                    onTap: () {},
-                    child: Text(
-                      'Create One',
-                      style: TextStyle(
-                        color: Bgcolor.backGroundColor,
+                        fontSize: 30,
                         fontWeight: .bold,
-                        fontSize: 13,
                       ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(height: 30),
+              TextField(
+                decoration: InputDecoration(
+                  contentPadding: .symmetric(vertical: 20),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: .circular(4),
+                    borderSide: BorderSide(color: MainColors.mainColors2),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: .circular(4),
+                    borderSide: BorderSide(color: MainColors.mainColors2),
+                  ),
+                  hintText: 'Email Address',
+                  hintStyle: TextStyle(color: Colors.grey.shade700, fontSize: 16),
+                  filled: true,
+                  fillColor: MainColors.mainColors2,
+                  prefix: Padding(padding: .only(left: 8)),
+                ),
+              ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: .center,
+                children: [
+                  SizedBox(
+                    height: 50,
+                    width: 460,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SignInPasswordPage(),
+                          ),
+                        );
+                      },
+                      borderRadius: .circular(100),
+                      child: MainContainer.mainContainer,
                     ),
                   ),
                 ],
               ),
-            ),
-            SizedBox(height: 60),
-            SizedBox(
-              height: 50,
-              width: 460,
-              child: InkWell(
-                onTap: () {},
-                child: MainContainer2.getContainer(
-                  image: 'assets/images/apple.png',
-                  name: 'Continue With Apple',
+              SizedBox(height: 20),
+              Transform.scale(
+                scaleX: 1.10,
+                child: Row(
+                  children: [
+                    Padding(padding: .only(left: 23)),
+                    InkWell(
+                      onTap: () {},
+                      child: Text(
+                        'Don\'t have an Account?',
+                        style: TextStyle(
+                          color: Bgcolor.backGroundColor,
+                          fontSize: 13,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 2),
+                    InkWell(
+                      onTap: () {},
+                      child: Text(
+                        'Create One',
+                        style: TextStyle(
+                          color: Bgcolor.backGroundColor,
+                          fontWeight: .bold,
+                          fontSize: 13,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ),
-            SizedBox(height: 15),
-            SizedBox(
-              height: 50,
-              width: 460,
-              child: InkWell(
-                onTap: () {},
-                child: MainContainer2.getContainer(
-                  image: 'assets/images/google.png',
-                  name: 'Continue With Google   ',
+              SizedBox(height: 60),
+              SizedBox(
+                height: 50,
+                width: 460,
+                child: InkWell(
+                  onTap: () {},
+                  child: MainContainer2.getContainer(
+                    image: 'assets/images/apple.png',
+                    name: 'Continue With Apple',
+                  ),
                 ),
               ),
-            ),
-            SizedBox(height: 15),
-            SizedBox(
-              height: 50,
-              width: 460,
-              child: InkWell(
-                onTap: () {},
-                child: MainContainer2.getContainer(
-                  image: 'assets/images/facebook.png',
-                  name: 'Continue With Facebook',
+              SizedBox(height: 15),
+              SizedBox(
+                height: 50,
+                width: 460,
+                child: InkWell(
+                  onTap: () {},
+                  child: MainContainer2.getContainer(
+                    image: 'assets/images/google.png',
+                    name: 'Continue With Google   ',
+                  ),
                 ),
               ),
-            ),
-          ],
+              SizedBox(height: 15),
+              SizedBox(
+                height: 50,
+                width: 460,
+                child: InkWell(
+                  onTap: () {},
+                  child: MainContainer2.getContainer(
+                    image: 'assets/images/facebook.png',
+                    name: 'Continue With Facebook',
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -76,10 +76,12 @@ class _SplashPage2State extends State<SplashPage2> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MainColors.mainColors,
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(160),
-          child: Image.asset('assets/images/Clot.png'),
+      body: SingleChildScrollView(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(160),
+            child: Image.asset('assets/images/Clot.png'),
+          ),
         ),
       ),
     );
