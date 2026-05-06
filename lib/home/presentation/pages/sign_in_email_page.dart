@@ -22,10 +22,9 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
           children: [
             Padding(padding: .only(top: 30)),
             Transform.scale(
-              scaleX: 1.10,
+              scaleX: 1.0,
               child: Row(
                 children: [
-                  Padding(padding: .only(left: 25)),
                   Text(
                     'Sign in',
                     style: TextStyle(
@@ -84,20 +83,26 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
               child: Row(
                 children: [
                   Padding(padding: .only(left: 23)),
-                  Text(
-                    'Don\'t have an Account?',
-                    style: TextStyle(
-                      color: Bgcolor.backGroundColor,
-                      fontSize: 13,
+                  InkWell(
+                    onTap: () {},
+                    child: Text(
+                      'Don\'t have an Account?',
+                      style: TextStyle(
+                        color: Bgcolor.backGroundColor,
+                        fontSize: 13,
+                      ),
                     ),
                   ),
                   SizedBox(width: 2),
-                  Text(
-                    'Create One',
-                    style: TextStyle(
-                      color: Bgcolor.backGroundColor,
-                      fontWeight: .bold,
-                      fontSize: 13,
+                  InkWell(
+                    onTap: () {},
+                    child: Text(
+                      'Create One',
+                      style: TextStyle(
+                        color: Bgcolor.backGroundColor,
+                        fontWeight: .bold,
+                        fontSize: 13,
+                      ),
                     ),
                   ),
                 ],
@@ -107,27 +112,36 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
             SizedBox(
               height: 50,
               width: 460,
-              child: MainContainer2.getContainer(
-                image: 'assets/images/apple.png',
-                name: 'Continue With Apple',
+              child: InkWell(
+                onTap: () {},
+                child: MainContainer2.getContainer(
+                  image: 'assets/images/apple.png',
+                  name: 'Continue With Apple',
+                ),
               ),
             ),
             SizedBox(height: 15),
             SizedBox(
               height: 50,
               width: 460,
-              child: MainContainer2.getContainer(
-                image: 'assets/images/google.png',
-                name: 'Continue With Google   ',
+              child: InkWell(
+                onTap: () {},
+                child: MainContainer2.getContainer(
+                  image: 'assets/images/google.png',
+                  name: 'Continue With Google   ',
+                ),
               ),
             ),
             SizedBox(height: 15),
             SizedBox(
               height: 50,
               width: 460,
-              child: MainContainer2.getContainer(
-                image: 'assets/images/facebook.png',
-                name: 'Continue With Facebook',
+              child: InkWell(
+                onTap: () {},
+                child: MainContainer2.getContainer(
+                  image: 'assets/images/facebook.png',
+                  name: 'Continue With Facebook',
+                ),
               ),
             ),
           ],

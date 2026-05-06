@@ -13,10 +13,10 @@ class MainContainer {
     ),
     child: Center(
       child: Transform.scale(
-        scaleX: 1.10,
+        scaleX: 1.0,
         child: Text(
           'Continue',
-          style: TextStyle(color: Colors.white, fontSize: 15),
+          style: TextStyle(color: Colors.white, fontSize: 16),
         ),
       ),
     ),
@@ -45,7 +45,7 @@ class MainContainer2 {
           SizedBox(width: 100),
           Text(
             name,
-            style: GoogleFonts.poppins(
+            style: GoogleFonts.gabarito(
               color: Colors.black,
               fontSize: 16,
               fontWeight: .w500,

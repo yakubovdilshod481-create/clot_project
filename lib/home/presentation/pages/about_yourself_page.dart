@@ -51,7 +51,8 @@ class _AboutYourselfPageState extends State<AboutYourselfPage> {
                       change = 0;
                     });
                   },
-                  child: Container(
+                  child: AnimatedContainer(
+                    duration: Duration(milliseconds: 200),
                     height: 60,
                     width: 220,
                     decoration: BoxDecoration(
@@ -77,7 +78,8 @@ class _AboutYourselfPageState extends State<AboutYourselfPage> {
                       change = 1;
                     });
                   },
-                  child: Container(
+                  child: AnimatedContainer(
+                    duration: Duration(milliseconds: 200),
                     height: 60,
                     width: 220,
                     decoration: BoxDecoration(
@@ -127,8 +129,8 @@ class _AboutYourselfPageState extends State<AboutYourselfPage> {
                     onPressed: () {},
                     icon: Icon(
                       Icons.keyboard_arrow_down,
-                      color: Colors.grey.shade700,
-                      size: 30,
+                      color: Colors.grey.shade600,
+                      size: 35,
                     ),
                   ),
                 ],

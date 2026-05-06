@@ -33,7 +33,7 @@ class _SplashPageState extends State<SplashPage> {
                 width: 70,
                 decoration: BoxDecoration(
                   color: MainColors.mainColors,
-                  borderRadius: .circular(15),
+                  borderRadius: .circular(20),
                 ),
                 child: Center(
                   child: Text(
