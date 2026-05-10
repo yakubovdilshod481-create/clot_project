@@ -3,6 +3,7 @@ import 'package:clot_project/home/presentation/model/categories_model/hoodies_in
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class Gridviewbuilder extends StatelessWidget {
   List<HoodiesInCategories> products = [
     HoodiesInCategories(
