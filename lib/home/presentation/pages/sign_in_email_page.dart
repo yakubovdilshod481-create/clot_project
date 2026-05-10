@@ -1,6 +1,7 @@
-import 'package:clot_project/home/core/color/backgroundcolor.dart';
-import 'package:clot_project/home/core/color/main_colors.dart';
-import 'package:clot_project/home/core/widget/main_container.dart';
+import 'package:clot_project/home/core/colors/app_colors.dart';
+import 'package:clot_project/home/core/widgets/app_container.dart';
+import 'package:clot_project/home/core/widgets/app_textfield.dart';
+import 'package:clot_project/home/presentation/pages/create_account_page.dart';
 import 'package:clot_project/home/presentation/pages/sign_in_password_page.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(23),
           child: Column(
             crossAxisAlignment: .start,
             children: [
@@ -29,7 +30,7 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
                     Text(
                       'Sign in',
                       style: TextStyle(
-                        color: Bgcolor.backGroundColor,
+                        color: AppColors.backGroundColor,
                         fontSize: 30,
                         fontWeight: .bold,
                       ),
@@ -38,45 +39,18 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
                 ),
               ),
               SizedBox(height: 30),
-              TextField(
-                decoration: InputDecoration(
-                  contentPadding: .symmetric(vertical: 20),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: .circular(4),
-                    borderSide: BorderSide(color: MainColors.mainColors2),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: .circular(4),
-                    borderSide: BorderSide(color: MainColors.mainColors2),
-                  ),
-                  hintText: 'Email Address',
-                  hintStyle: TextStyle(color: Colors.grey.shade700, fontSize: 16),
-                  filled: true,
-                  fillColor: MainColors.mainColors2,
-                  prefix: Padding(padding: .only(left: 8)),
-                ),
+              SizedBox(
+                height: 60,
+                child: AppTextfield(textfield: 'Email Address'),
               ),
               SizedBox(height: 20),
-              Row(
-                mainAxisAlignment: .center,
-                children: [
-                  SizedBox(
-                    height: 50,
-                    width: 460,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => SignInPasswordPage(),
-                          ),
-                        );
-                      },
-                      borderRadius: .circular(100),
-                      child: MainContainer.mainContainer,
-                    ),
-                  ),
-                ],
+              SizedBox(
+                height: 50,
+                width: double.infinity,
+                child: AppContainer(
+                  button: 'Continue',
+                  navigator: SignInPasswordPage(),
+                ),
               ),
               SizedBox(height: 20),
               Transform.scale(
@@ -84,23 +58,27 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
                 child: Row(
                   children: [
                     Padding(padding: .only(left: 23)),
-                    InkWell(
-                      onTap: () {},
-                      child: Text(
-                        'Don\'t have an Account?',
-                        style: TextStyle(
-                          color: Bgcolor.backGroundColor,
-                          fontSize: 13,
-                        ),
+                    Text(
+                      'Don\'t have an Account?',
+                      style: TextStyle(
+                        color: AppColors.textColor,
+                        fontSize: 13,
                       ),
                     ),
                     SizedBox(width: 2),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CreateAccountPage(),
+                          ),
+                        );
+                      },
                       child: Text(
                         'Create One',
                         style: TextStyle(
-                          color: Bgcolor.backGroundColor,
+                          color: AppColors.textColor,
                           fontWeight: .bold,
                           fontSize: 13,
                         ),
@@ -112,37 +90,25 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
               SizedBox(height: 60),
               SizedBox(
                 height: 50,
-                width: 460,
-                child: InkWell(
-                  onTap: () {},
-                  child: MainContainer2.getContainer(
-                    image: 'assets/images/apple.png',
-                    name: 'Continue With Apple',
-                  ),
+                child: AppContainer2(
+                  text: 'Continue With Apple',
+                  image: 'assets/images/apple.png',
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 13),
               SizedBox(
                 height: 50,
-                width: 460,
-                child: InkWell(
-                  onTap: () {},
-                  child: MainContainer2.getContainer(
-                    image: 'assets/images/google.png',
-                    name: 'Continue With Google   ',
-                  ),
+                child: AppContainer2(
+                  text: 'Continue With Google',
+                  image: 'assets/images/google.png',
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 13),
               SizedBox(
                 height: 50,
-                width: 460,
-                child: InkWell(
-                  onTap: () {},
-                  child: MainContainer2.getContainer(
-                    image: 'assets/images/facebook.png',
-                    name: 'Continue With Facebook',
-                  ),
+                child: AppContainer2(
+                  text: 'Continue With Facebook',
+                  image: 'assets/images/facebook.png',
                 ),
               ),
             ],

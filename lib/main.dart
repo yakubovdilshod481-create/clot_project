@@ -1,4 +1,5 @@
-import 'package:clot_project/home/presentation/pages/splash_page.dart';
+import 'package:clot_project/home/presentation/pages/categories_page.dart';
+import 'package:clot_project/home/presentation/pages/homepage.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,9 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: SplashPage(),
+      title: 'Clot Project',
+      theme: ThemeData(
+        colorScheme: .fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: Colors.white,
+      ),
+      home: Homepage(),
     );
   }
 }

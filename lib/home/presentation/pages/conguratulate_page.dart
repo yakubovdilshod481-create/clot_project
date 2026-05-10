@@ -1,5 +1,4 @@
-import 'package:clot_project/home/core/color/backgroundcolor.dart';
-import 'package:clot_project/home/core/color/main_colors.dart';
+import 'package:clot_project/home/core/colors/app_colors.dart';
 import 'package:clot_project/home/presentation/pages/about_yourself_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,8 +17,8 @@ class _ConguratulatePageState extends State<ConguratulatePage> {
       body: SingleChildScrollView(
         child: Center(
           child: Column(
-            mainAxisAlignment: .center,
             children: [
+              Padding(padding: .only(top: 270)),
               Container(
                 height: 100,
                 width: 100,
@@ -36,7 +35,7 @@ class _ConguratulatePageState extends State<ConguratulatePage> {
                   Text(
                     'We sent you an Email to reset\n           your password',
                     style: GoogleFonts.gabarito(
-                      color: Bgcolor.backGroundColor,
+                      color: AppColors.textColor,
                       fontSize: 23,
                     ),
                   ),
@@ -47,15 +46,18 @@ class _ConguratulatePageState extends State<ConguratulatePage> {
                 onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => AboutYourselfPage()),
+                    MaterialPageRoute(
+                      builder: (context) => AboutYourselfPage(),
+                    ),
                   );
                 },
+                borderRadius: .circular(100),
                 child: Container(
                   height: 50,
                   width: 150,
                   decoration: BoxDecoration(
                     borderRadius: .circular(100),
-                    color: MainColors.mainColors,
+                    color: AppColors.mainColors,
                   ),
                   child: Center(
                     child: Text(

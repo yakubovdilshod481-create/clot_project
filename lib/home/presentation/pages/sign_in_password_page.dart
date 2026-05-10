@@ -1,7 +1,8 @@
-import 'package:clot_project/home/core/color/backgroundcolor.dart';
-import 'package:clot_project/home/core/widget/app_textfield.dart';
-import 'package:clot_project/home/core/widget/main_container.dart';
+import 'package:clot_project/home/core/colors/app_colors.dart';
+import 'package:clot_project/home/core/widgets/app_textfield.dart';
+import 'package:clot_project/home/core/widgets/app_container.dart';
 import 'package:clot_project/home/presentation/pages/create_account_page.dart';
+import 'package:clot_project/home/presentation/pages/forgot_password_page.dart';
 import 'package:flutter/material.dart';
 
 class SignInPasswordPage extends StatefulWidget {
@@ -30,7 +31,7 @@ class _SignInPasswordPageState extends State<SignInPasswordPage> {
                     Text(
                       'Sign in',
                       style: TextStyle(
-                        color: Bgcolor.backGroundColor,
+                        color: AppColors.backGroundColor,
                         fontSize: 30,
                         fontWeight: .bold,
                       ),
@@ -41,8 +42,10 @@ class _SignInPasswordPageState extends State<SignInPasswordPage> {
               SizedBox(height: 30),
               SizedBox(
                 height: 70,
-                width: 450,
-                child: AppTextfield.textfield(data: 'Password'),
+                width: double.infinity,
+                child: AppTextfield(
+                  textfield: 'Password',
+                ),
               ),
               SizedBox(height: 20),
               Row(
@@ -51,17 +54,9 @@ class _SignInPasswordPageState extends State<SignInPasswordPage> {
                   SizedBox(
                     height: 50,
                     width: 460,
-                    child: InkWell(
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => CreateAccountPage(),
-                          ),
-                        );
-                      },
-                      borderRadius: .circular(100),
-                      child: MainContainer.mainContainer,
+                    child: AppContainer(
+                      button: 'Continue',
+                      navigator: CreateAccountPage(),
                     ),
                   ),
                 ],
@@ -72,20 +67,40 @@ class _SignInPasswordPageState extends State<SignInPasswordPage> {
                 child: Row(
                   children: [
                     Padding(padding: .only(left: 23)),
-                    Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        color: Bgcolor.backGroundColor,
-                        fontSize: 13,
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ForgotPasswordPage(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'Forgot Password?',
+                        style: TextStyle(
+                          color: AppColors.textColor,
+                          fontSize: 13,
+                        ),
                       ),
                     ),
                     SizedBox(width: 2),
-                    Text(
-                      'Reset',
-                      style: TextStyle(
-                        color: Bgcolor.backGroundColor,
-                        fontWeight: .bold,
-                        fontSize: 13,
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ForgotPasswordPage(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'Reset',
+                        style: TextStyle(
+                          color: AppColors.textColor,
+                          fontWeight: .bold,
+                          fontSize: 13,
+                        ),
                       ),
                     ),
                   ],

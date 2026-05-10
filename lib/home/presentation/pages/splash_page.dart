@@ -1,6 +1,5 @@
 import 'dart:async';
-
-import 'package:clot_project/home/core/color/main_colors.dart';
+import 'package:clot_project/home/core/colors/app_colors.dart';
 import 'package:clot_project/home/presentation/pages/sign_in_email_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -32,7 +31,7 @@ class _SplashPageState extends State<SplashPage> {
                 height: 70,
                 width: 70,
                 decoration: BoxDecoration(
-                  color: MainColors.mainColors,
+                  color: AppColors.mainColors,
                   borderRadius: .circular(20),
                 ),
                 child: Center(
@@ -75,12 +74,17 @@ class _SplashPage2State extends State<SplashPage2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MainColors.mainColors,
+      backgroundColor: AppColors.mainColors,
       body: SingleChildScrollView(
         child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(160),
-            child: Image.asset('assets/images/Clot.png'),
+          child: Column(
+            children: [
+              Padding(padding: .only(top: 220)),
+              Padding(
+                padding: const EdgeInsets.all(160),
+                child: Image.asset('assets/images/Clot.png'),
+              ),
+            ],
           ),
         ),
       ),

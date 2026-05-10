@@ -1,9 +1,8 @@
-import 'package:clot_project/home/core/color/backgroundcolor.dart';
-import 'package:clot_project/home/core/color/main_colors.dart';
-import 'package:clot_project/home/core/widget/app_textfield.dart';
-import 'package:clot_project/home/core/widget/main_container.dart';
+import 'package:clot_project/home/core/colors/app_colors.dart';
+import 'package:clot_project/home/core/widgets/app_textfield.dart';
+import 'package:clot_project/home/core/widgets/app_container.dart';
+import 'package:clot_project/home/presentation/pages/conguratulate_page.dart';
 import 'package:clot_project/home/presentation/pages/forgot_password_page.dart';
-import 'package:clot_project/home/presentation/pages/sign_in_password_page.dart';
 import 'package:flutter/material.dart';
 
 class CreateAccountPage extends StatefulWidget {
@@ -20,20 +19,17 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
       appBar: AppBar(
         leading: Padding(
           padding: const EdgeInsets.only(top: 10, left: 10),
-          child: IconButton(
-            style: IconButton.styleFrom(
-              backgroundColor: MainColors.mainColors2,
-            ),
-            onPressed: () {
-              Navigator.pop(
-                context,
-                MaterialPageRoute(builder: (context) => SignInPasswordPage()),
-              );
-            },
-            icon: Icon(
-              Icons.keyboard_arrow_left,
-              color: Colors.grey.shade600,
-              size: 25,
+          child: InkWell(
+            onTap: () {},
+            child: Container(
+              decoration: BoxDecoration(
+                color: AppColors.mainColors2,
+                borderRadius: .circular(100),
+              ),
+              child: Padding(
+                padding: .all(15),
+                child: Image.asset('assets/images/arrow_left.png'),
+              ),
             ),
           ),
         ),
@@ -52,7 +48,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     Text(
                       'Create Account',
                       style: TextStyle(
-                        color: Bgcolor.backGroundColor,
+                        color: AppColors.backGroundColor,
                         fontSize: 30,
                         fontWeight: .bold,
                       ),
@@ -63,34 +59,37 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
               SizedBox(height: 30),
               SizedBox(
                 height: 70,
-                width: 450,
-                child: AppTextfield.textfield(data: 'Firstname'),
+                width: double.infinity,
+                child: AppTextfield(textfield: 'Firstname'),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 16),
               SizedBox(
                 height: 70,
-                width: 450,
-                child: AppTextfield.textfield(data: 'Lastname'),
+                width: double.infinity,
+                child: AppTextfield(textfield: 'Lastname'),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 16),
               SizedBox(
                 height: 70,
-                width: 450,
-                child: AppTextfield.textfield(data: 'Email Address'),
+                width: double.infinity,
+                child: AppTextfield(textfield: 'Email Address'),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 16),
               SizedBox(
                 height: 70,
-                width: 450,
-                child: AppTextfield.textfield(data: 'Password'),
+                width: double.infinity,
+                child: AppTextfield(textfield: 'Password'),
               ),
-              SizedBox(height: 35),
+              SizedBox(height: 40),
               SizedBox(
                 height: 50,
-                width: 460,
-                child: InkWell(onTap: () {}, child: MainContainer.mainContainer),
+                width: double.infinity,
+                child: AppContainer(
+                  button: 'Continue',
+                  navigator: ConguratulatePage(),
+                ),
               ),
-              SizedBox(height: 45),
+              SizedBox(height: 40),
               Row(
                 children: [
                   InkWell(
@@ -104,7 +103,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     },
                     child: Text(
                       'Forgot Password?',
-                      style: TextStyle(color: Bgcolor.backGroundColor),
+                      style: TextStyle(color: AppColors.textColor),
                     ),
                   ),
                   SizedBox(width: 5),
@@ -113,7 +112,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
                     child: Text(
                       'Reset',
                       style: TextStyle(
-                        color: Bgcolor.backGroundColor,
+                        color: AppColors.textColor,
                         fontWeight: .bold,
                       ),
                     ),

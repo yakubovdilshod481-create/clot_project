@@ -1,7 +1,6 @@
-import 'package:clot_project/home/core/color/backgroundcolor.dart';
-import 'package:clot_project/home/core/color/main_colors.dart';
-import 'package:clot_project/home/core/widget/app_textfield.dart';
-import 'package:clot_project/home/core/widget/main_container.dart';
+import 'package:clot_project/home/core/colors/app_colors.dart';
+import 'package:clot_project/home/core/widgets/app_textfield.dart';
+import 'package:clot_project/home/core/widgets/app_container.dart';
 import 'package:clot_project/home/presentation/pages/conguratulate_page.dart';
 import 'package:clot_project/home/presentation/pages/create_account_page.dart';
 import 'package:flutter/material.dart';
@@ -21,9 +20,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         leading: Padding(
           padding: const EdgeInsets.only(top: 10, left: 10),
           child: IconButton(
-            style: IconButton.styleFrom(
-              backgroundColor: MainColors.mainColors2,
-            ),
+            style: IconButton.styleFrom(backgroundColor: AppColors.mainColors2),
             onPressed: () {
               Navigator.pop(
                 context,
@@ -47,7 +44,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               Text(
                 'Forgot Password',
                 style: TextStyle(
-                  color: Bgcolor.backGroundColor,
+                  color: AppColors.backGroundColor,
                   fontSize: 30,
                   fontWeight: .bold,
                 ),
@@ -55,23 +52,18 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
               SizedBox(height: 30),
               SizedBox(
                 height: 60,
-                width: 460,
-                child: AppTextfield.textfield(data: 'Enter Email address'),
+                width: double.infinity,
+                child: AppTextfield(
+                  textfield: 'Enter Email address',
+                ),
               ),
               SizedBox(height: 25),
               SizedBox(
                 height: 50,
-                width: 460,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ConguratulatePage(),
-                      ),
-                    );
-                  },
-                  child: MainContainer.mainContainer,
+                width: double.infinity,
+                child: AppContainer(
+                  button: 'Continue',
+                  navigator: ConguratulatePage(),
                 ),
               ),
             ],
