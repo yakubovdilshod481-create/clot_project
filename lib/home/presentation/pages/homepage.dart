@@ -1,7 +1,10 @@
 import 'package:clot_project/home/core/colors/app_colors.dart';
+import 'package:clot_project/home/core/widgets/app_buttom_textfield_search.dart';
 import 'package:clot_project/home/core/widgets/app_textfield.dart';
-import 'package:clot_project/home/core/widgets/listview_seperated.dart';
+import 'package:clot_project/home/core/widgets/app_listview_seperated.dart';
 import 'package:clot_project/home/presentation/pages/categories_page.dart';
+import 'package:clot_project/home/presentation/pages/notification_page.dart';
+import 'package:clot_project/home/presentation/pages/orders_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,7 +16,12 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  List<Widget> pages = [Homepage2(), Homepage2(), Homepage2(), Homepage2()];
+  List<Widget> pages = [
+    Homepage2(),
+    NotificationPage(),
+    OrdersPage(),
+    Homepage2(),
+  ];
   int page = 0;
   bool tanlangan = false;
   @override
@@ -141,12 +149,9 @@ class _Homepage2State extends State<Homepage2> {
                 ),
                 SizedBox(height: 24),
                 SizedBox(
-                  height: 60,
+                  height: 40,
                   width: double.infinity,
-                  child: AppTextfieldSearch(
-                    image: 'assets/images/search.png',
-                    text: 'Search',
-                  ),
+                  child: AppButtomTextfieldSearch(),
                 ),
                 SizedBox(height: 24),
                 Row(

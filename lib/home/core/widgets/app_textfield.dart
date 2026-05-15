@@ -68,6 +68,15 @@ class AppTextfieldSearch extends StatelessWidget {
           ),
           filled: true,
           fillColor: AppColors.mainColors2,
+          suffixIcon: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.close,
+              color: AppColors.textColor,
+              size: 18,
+              fontWeight: .bold,
+            ),
+          ),
         ),
       ),
     );

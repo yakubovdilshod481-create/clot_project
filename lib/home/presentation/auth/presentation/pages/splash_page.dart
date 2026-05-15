@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:clot_project/home/core/colors/app_colors.dart';
-import 'package:clot_project/home/presentation/pages/sign_in_email_page.dart';
+import 'package:clot_project/home/presentation/auth/presentation/pages/sign_in_email_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,32 +1,33 @@
 import 'package:clot_project/home/core/colors/app_colors.dart';
-import 'package:clot_project/home/core/widgets/app_container.dart';
 import 'package:clot_project/home/core/widgets/app_textfield.dart';
-import 'package:clot_project/home/presentation/pages/create_account_page.dart';
-import 'package:clot_project/home/presentation/pages/sign_in_password_page.dart';
+import 'package:clot_project/home/core/widgets/app_container.dart';
+import 'package:clot_project/home/presentation/auth/presentation/pages/create_account_page.dart';
+import 'package:clot_project/home/presentation/auth/presentation/pages/forgot_password_page.dart';
 import 'package:flutter/material.dart';
 
-class SignInEmailPage extends StatefulWidget {
-  const SignInEmailPage({super.key});
+class SignInPasswordPage extends StatefulWidget {
+  const SignInPasswordPage({super.key});
 
   @override
-  State<SignInEmailPage> createState() => _SignInEmailPageState();
+  State<SignInPasswordPage> createState() => _SignInPasswordPageState();
 }
 
-class _SignInEmailPageState extends State<SignInEmailPage> {
+class _SignInPasswordPageState extends State<SignInPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(23),
+          padding: const EdgeInsets.all(20),
           child: Column(
             crossAxisAlignment: .start,
             children: [
               Padding(padding: .only(top: 30)),
               Transform.scale(
-                scaleX: 1.0,
+                scaleX: 1.10,
                 child: Row(
                   children: [
+                    Padding(padding: .only(left: 25)),
                     Text(
                       'Sign in',
                       style: TextStyle(
@@ -40,17 +41,25 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
               ),
               SizedBox(height: 30),
               SizedBox(
-                height: 60,
-                child: AppTextfield(textfield: 'Email Address'),
+                height: 70,
+                width: double.infinity,
+                child: AppTextfield(
+                  textfield: 'Password',
+                ),
               ),
               SizedBox(height: 20),
-              SizedBox(
-                height: 50,
-                width: double.infinity,
-                child: AppContainer(
-                  button: 'Continue',
-                  navigator: SignInPasswordPage(),
-                ),
+              Row(
+                mainAxisAlignment: .center,
+                children: [
+                  SizedBox(
+                    height: 50,
+                    width: 460,
+                    child: AppContainer(
+                      button: 'Continue',
+                      navigator: CreateAccountPage(),
+                    ),
+                  ),
+                ],
               ),
               SizedBox(height: 20),
               Transform.scale(
@@ -58,11 +67,21 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
                 child: Row(
                   children: [
                     Padding(padding: .only(left: 23)),
-                    Text(
-                      'Don\'t have an Account?',
-                      style: TextStyle(
-                        color: AppColors.textColor,
-                        fontSize: 13,
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ForgotPasswordPage(),
+                          ),
+                        );
+                      },
+                      child: Text(
+                        'Forgot Password?',
+                        style: TextStyle(
+                          color: AppColors.textColor,
+                          fontSize: 13,
+                        ),
                       ),
                     ),
                     SizedBox(width: 2),
@@ -71,12 +90,12 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => CreateAccountPage(),
+                            builder: (context) => ForgotPasswordPage(),
                           ),
                         );
                       },
                       child: Text(
-                        'Create One',
+                        'Reset',
                         style: TextStyle(
                           color: AppColors.textColor,
                           fontWeight: .bold,
@@ -85,30 +104,6 @@ class _SignInEmailPageState extends State<SignInEmailPage> {
                       ),
                     ),
                   ],
-                ),
-              ),
-              SizedBox(height: 60),
-              SizedBox(
-                height: 50,
-                child: AppContainer2(
-                  text: 'Continue With Apple',
-                  image: 'assets/images/apple.png',
-                ),
-              ),
-              SizedBox(height: 13),
-              SizedBox(
-                height: 50,
-                child: AppContainer2(
-                  text: 'Continue With Google',
-                  image: 'assets/images/google.png',
-                ),
-              ),
-              SizedBox(height: 13),
-              SizedBox(
-                height: 50,
-                child: AppContainer2(
-                  text: 'Continue With Facebook',
-                  image: 'assets/images/facebook.png',
                 ),
               ),
             ],

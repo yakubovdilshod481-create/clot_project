@@ -1,8 +1,8 @@
 import 'package:clot_project/home/core/colors/app_colors.dart';
 import 'package:clot_project/home/core/widgets/app_textfield.dart';
 import 'package:clot_project/home/core/widgets/app_container.dart';
-import 'package:clot_project/home/presentation/pages/conguratulate_page.dart';
-import 'package:clot_project/home/presentation/pages/forgot_password_page.dart';
+import 'package:clot_project/home/presentation/auth/presentation/pages/conguratulate_page.dart';
+import 'package:clot_project/home/presentation/auth/presentation/pages/forgot_password_page.dart';
 import 'package:flutter/material.dart';
 
 class CreateAccountPage extends StatefulWidget {

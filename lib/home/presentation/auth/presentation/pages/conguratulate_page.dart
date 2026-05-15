@@ -1,5 +1,5 @@
 import 'package:clot_project/home/core/colors/app_colors.dart';
-import 'package:clot_project/home/presentation/pages/about_yourself_page.dart';
+import 'package:clot_project/home/presentation/auth/presentation/pages/about_yourself_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

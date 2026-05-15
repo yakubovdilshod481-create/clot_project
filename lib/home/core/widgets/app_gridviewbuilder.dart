@@ -1,5 +1,6 @@
 import 'package:clot_project/home/core/colors/app_colors.dart';
-import 'package:clot_project/home/presentation/model/categories_model/hoodies_in_categories.dart';
+import 'package:clot_project/home/presentation/model/categories_models/hoodies_in_categories.dart';
+import 'package:clot_project/home/presentation/model/search_models/search_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -88,6 +89,96 @@ class Gridviewbuilder extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 4),
                   child: Text(
                     product.productprice,
+                    style: GoogleFonts.gabarito(
+                      color: AppColors.textColor,
+                      fontSize: 12,
+                      fontWeight: .bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+//ignore: must_be_immutable
+class AppOrderGridviewbuilder extends StatelessWidget {
+  List<SearchModel> search = [
+    SearchModel(
+      image: 'assets/images/foundedproduct.png',
+      price: '\$56.97',
+      title: 'Club Fleece Mens Jacket',
+    ),
+    SearchModel(
+      image: 'assets/images/foundedproduct2.png',
+      price: '\$150.97',
+      title: 'Skate Jacket',
+    ),
+    SearchModel(
+      image: 'assets/images/foundedproduct3.png',
+      price: '\$280.97',
+      title: 'Therma Fit Puffer Jacket ',
+    ),
+    SearchModel(
+      image: 'assets/images/foundedproduct4 .png',
+      price: '\$128.97',
+      title: 'Men\'s Workwear Jacket',
+    ),
+  ];
+  AppOrderGridviewbuilder({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: GridView.builder(
+        itemCount: 4,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 2,
+          mainAxisSpacing: 20,
+          crossAxisSpacing: 20,
+          childAspectRatio: 0.75,
+          mainAxisExtent: 281,
+        ),
+        itemBuilder: (context, index) {
+          final seek = search[index];
+          return Container(
+            decoration: BoxDecoration(
+              borderRadius: .circular(8),
+              color: AppColors.mainColors2,
+            ),
+            child: Column(
+              crossAxisAlignment: .start,
+              children: [
+                Container(
+                  height: 220,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(seek.image),
+                    ),
+                  ),
+                  alignment: .topRight,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Image.asset('assets/images/like.png'),
+                  ),
+                ),
+                SizedBox(height: 8),
+                Padding(
+                  padding: .only(left: 4),
+                  child: Text(
+                    seek.title,
+                    style: TextStyle(color: AppColors.textColor, fontSize: 12),
+                  ),
+                ),
+                SizedBox(height: 8),
+                Padding(
+                  padding: const EdgeInsets.only(left: 4),
+                  child: Text(
+                    seek.price,
                     style: GoogleFonts.gabarito(
                       color: AppColors.textColor,
                       fontSize: 12,

@@ -1,6 +1,6 @@
 import 'package:clot_project/home/core/colors/app_colors.dart';
-import 'package:clot_project/home/core/widgets/gridviewbuilder.dart';
-import 'package:clot_project/home/core/widgets/listview_seperated.dart';
+import 'package:clot_project/home/core/widgets/app_gridviewbuilder.dart';
+import 'package:clot_project/home/core/widgets/app_listview_seperated.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,8 +1,11 @@
 import 'package:clot_project/home/core/colors/app_colors.dart';
-import 'package:clot_project/home/presentation/model/categories_model/categories.dart';
-import 'package:clot_project/home/presentation/model/homepage_model/category.dart';
-import 'package:clot_project/home/presentation/model/homepage_model/products.dart';
+import 'package:clot_project/home/presentation/model/categories_models/categories.dart';
+import 'package:clot_project/home/presentation/model/homepage_models/category.dart';
+import 'package:clot_project/home/presentation/model/homepage_models/products.dart';
+import 'package:clot_project/home/presentation/model/orders_models/order_model.dart';
+import 'package:clot_project/home/presentation/model/orders_models/order_model2.dart';
 import 'package:clot_project/home/presentation/pages/hoodies_page_in_categories.dart';
+import 'package:clot_project/home/presentation/pages/orders_page2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -482,6 +485,135 @@ class ShopByCategories extends StatelessWidget {
           return SizedBox(height: 8);
         },
         itemCount: 5,
+      ),
+    );
+  }
+}
+
+// ignore: must_be_immutable
+class AppOrderListviewSeperated extends StatelessWidget {
+  List<OrderModel> orders = [
+    OrderModel(bodytext: '4 items', title: 'Order #456765'),
+    OrderModel(bodytext: '2 items', title: 'Order #454569'),
+    OrderModel(bodytext: '1 items', title: 'Order #454809'),
+  ];
+  AppOrderListviewSeperated({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView.separated(
+        itemBuilder: (context, index) {
+          final order = orders[index];
+          return InkWell(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AppOrderListviewSeperated2(),
+                ),
+              );
+            },
+            borderRadius: .circular(8),
+            child: Container(
+              height: 82,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                borderRadius: .circular(8),
+                color: AppColors.mainColors2,
+              ),
+              child: Padding(
+                padding: .all(20),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/list.png',
+                      height: 24,
+                      width: 24,
+                    ),
+                    SizedBox(width: 20),
+                    Column(
+                      crossAxisAlignment: .start,
+                      children: [
+                        Text(
+                          order.title,
+                          style: TextStyle(
+                            color: AppColors.textColor,
+                            fontSize: 16,
+                            fontWeight: .bold,
+                          ),
+                        ),
+                        SizedBox(height: 2),
+                        Text(
+                          order.bodytext,
+                          style: TextStyle(
+                            color: AppColors.textcolor2,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Spacer(),
+                    InkWell(
+                      onTap: () {},
+                      borderRadius: .circular(100),
+                      child: Image.asset(
+                        'assets/images/arrow_right.png',
+                        width: 24,
+                        height: 24,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          );
+        },
+        separatorBuilder: (context, index) {
+          return SizedBox(height: 12);
+        },
+        itemCount: 3,
+      ),
+    );
+  }
+}
+
+// ignore: must_be_immutable
+class AppOrderListviewSeperated2 extends StatelessWidget {
+  List<OrderModel2> orders = [
+    OrderModel2(named: 'Delivered', image: 'assets/images/check.png'),
+    OrderModel2(named: 'Shipped', image: 'assets/images/check.png'),
+    OrderModel2(named: 'Order Confirmed', image: 'assets/images/check.png'),
+    OrderModel2(named: 'Order Placed', image: 'assets/images/check.png'),
+  ];
+  AppOrderListviewSeperated2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ListView.separated(
+        itemBuilder: (context, index) {
+          final order = orders[index];
+          return Padding(
+            padding: const EdgeInsets.all(0),
+            child: Row(
+              children: [
+                Image.asset('assets/images/check.png', width: 24, height: 24),
+                SizedBox(width: 12),
+                Text(
+                  order.named,
+                  style: TextStyle(color: Colors.grey.shade600),
+                ),
+                Spacer(),
+                Text('28 May', style: TextStyle(color: AppColors.textColor)),
+              ],
+            ),
+          );
+        },
+        separatorBuilder: (context, index) {
+          return SizedBox(height: 51);
+        },
+        itemCount: 4,
       ),
     );
   }
